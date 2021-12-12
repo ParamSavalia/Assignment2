@@ -1,0 +1,47 @@
+﻿@model Lab4.Models.Advertisement
+@using Lab4.Models;
+
+@{
+    ViewData["Title"] = "Create";
+    Community community = ViewBag.Community;
+
+}
+<link rel="stylesheet" href="~/StyleSheet.css" />
+<link rel="stylesheet" href="~/bootstrap.min.css" />
+
+<h1>Create</h1>
+
+<h4>Advertisement</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FileName" class="control-label"></label>
+                <input asp-for="FileName" class="form-control" />
+                <span asp-validation-for="FileName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="btn btn-sm float-left">
+                    <input name="file" type="file">
+                </div>
+                <input name="communityId" type="text" value="@community.Id" style="display:none;">
+                @*<label asp-for="Url" class="control-label"></label>
+                    <input asp-for="Url" class="form-control" />
+                    <span asp-validation-for="Url" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="AdsForCommunity" asp-route-id="@community.Id">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

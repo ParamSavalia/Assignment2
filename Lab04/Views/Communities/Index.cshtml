@@ -1,0 +1,76 @@
+﻿@using Lab4.Models;
+@model IEnumerable<Lab4.Models.Community>
+
+
+@{
+    ViewData["Title"] = "Index";
+    ICollection<Student> MyStudents = ViewBag.MyStudents;
+}
+<link rel="stylesheet" href="~/StyleSheet.css" />
+<link rel="stylesheet" href="~/bootstrap.min.css" />
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Budget)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Budget)
+                </td>
+                <td>
+                    <a asp-action="Select" asp-route-id="@item.Id">Select</a> |
+                    <a asp-controller="Advertisements" asp-action="AdsForCommunity" asp-route-id="@item.Id">Ads</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@if (MyStudents != null)
+{
+    <p>
+        <h2>Members of the community</h2>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in MyStudents)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => student.LastName), @Html.DisplayFor(modelItem => student.FirstName)
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+}

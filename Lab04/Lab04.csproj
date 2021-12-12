@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Views\Advertisements\Create.cshtml" />
+    <None Include="Views\Advertisements\Delete.cshtml" />
+    <None Include="Views\Advertisements\Details.cshtml" />
+    <None Include="Views\Advertisements\Edit.cshtml" />
+    <None Include="Views\Advertisements\Index.cshtml" />
+    <None Include="Views\Communities\Create.cshtml" />
+    <None Include="Views\Communities\Delete.cshtml" />
+    <None Include="Views\Communities\Details.cshtml" />
+    <None Include="Views\Communities\Edit.cshtml" />
+    <None Include="Views\Communities\Index.cshtml" />
+    <None Include="Views\CommunityMemberships\Create.cshtml" />
+    <None Include="Views\CommunityMemberships\Delete.cshtml" />
+    <None Include="Views\CommunityMemberships\Details.cshtml" />
+    <None Include="Views\CommunityMemberships\Edit.cshtml" />
+    <None Include="Views\CommunityMemberships\Index.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Views\Students\Create.cshtml" />
+    <None Include="Views\Students\Delete.cshtml" />
+    <None Include="Views\Students\Details.cshtml" />
+    <None Include="Views\Students\Edit.cshtml" />
+    <None Include="Views\Students\EditMemberships.cshtml" />
+    <None Include="Views\Students\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.10.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+</Project>
